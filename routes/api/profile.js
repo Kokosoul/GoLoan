@@ -183,7 +183,7 @@ router.delete('/loan/:loan_id', auth, async (req, res) => {
     try {
         const profile = await Profile.findOne({ user: req.user.id });
         // get remove index
-        const removeIndex = profile.loan.map(item => item.id).indexOf(req.params.edu_id);
+        const removeIndex = profile.loan.map(item => item.id).indexOf(req.params.loan_id);
         profile.loan.splice(removeIndex, 1);
         await profile.save();
         res.json(profile)
