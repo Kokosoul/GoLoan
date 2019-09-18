@@ -6,8 +6,13 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>
-          GoLoan.ga is currently in development.
+          DoLoan.ga is currently in development.
         </p>
+        <h1>Team 1</h1>
+        <li>Yoshi</li>
+        <li>Daniel</li>
+        <li>Vlada</li>
+        <li>Taras</li>
         <a
           className="App-link"
           href="https://reactjs.org"
