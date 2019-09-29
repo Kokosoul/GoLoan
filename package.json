@@ -1,5 +1,5 @@
 {
-  "name": "goloan",
+  "name": "doloan",
   "version": "1.0.0",
   "description": "Loan money to people you know",
   "main": "server.js",
