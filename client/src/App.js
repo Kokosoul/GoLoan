@@ -1,24 +1,10 @@
-import React from 'react';
-import './App.css';
+import React, { Fragment } from "react";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          GoLoan.ga is currently in development.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn More
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <Fragment>
+    <h1>App</h1>
+  </Fragment>
+);
 
 export default App;
