@@ -3,6 +3,18 @@ Loan system for average people.
 
 
 <h1>Installation guide</h1>
+In the GoLoan root folder, install these modules. (If you would like to work with backend)
+
+`npm i express express-validator bcryptjs config gravatar jsonwebtoken mongoose request`
+
+![Capture](https://user-images.githubusercontent.com/44103078/65082248-7641c900-d973-11e9-8be1-9c121837856a.PNG)
+
+Wait for it to finish downloading, then download nodemon and concurrently.
+
+`npm i -D nodemon concurrently`
+
+![Capture2](https://user-images.githubusercontent.com/44103078/65082264-7e9a0400-d973-11e9-91da-55b7c8416f9b.PNG)
+
 
 Go into client folder by typing in `cd client` in terminal.
 ![Capture1](https://user-images.githubusercontent.com/44103078/64914949-671c0a80-d72a-11e9-92e5-2a757fec130d.PNG)
