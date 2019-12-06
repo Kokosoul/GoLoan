@@ -22,13 +22,13 @@ const CreateProfile = ({ createProfile, history }) => {
   };
   return (
     <Fragment>
-      <h1 className="large text-primary">Create Your Profile</h1>
+      <h1 className="large text-primary">Add Bank Account</h1>
       <p className="lead">
-        <i className="fas fa-user"></i> Tell us about yourself!
+        <i className="fas fa-user"></i> Enter Your Bank Account Below!
       </p>
       <form className="form" onSubmit={e => onSubmit(e)}>
         <div className="form-group">
-          <textarea placeholder="Describe yourself in few sentences." name="bio" value={bio} onChange={e => onChange(e)}></textarea>
+          <textarea placeholder="Please enter your bank account here." name="bio" value={bio} onChange={e => onChange(e)}></textarea>
         </div>
         <div className="my-2">
           <button onClick={() => toggleSocialInputs(!displaySocialInputs)} type="button" className="btn btn-light">
