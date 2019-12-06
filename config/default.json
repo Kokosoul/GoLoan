@@ -1,4 +1,0 @@
-{
-    "mongoURI": "mongodb+srv://jackiexu1228:520Shenghe@5800-ajdqk.mongodb.net/test?retryWrites=true&w=majority",
-    "jwtSecret": "goloan"
-}
