@@ -1,6 +1,6 @@
 import axios from "axios";
 import { setAlert } from "./alert";
-import { GET_PROFILE, PROFILE_ERROR, UPDATE_PROFILE } from "./types";
+import { GET_PROFILE, PROFILE_ERROR, UPDATE_PROFILE, DELETE_PROFILE } from "./types";
 
 // GET Current users profile
 export const getCurrentProfile = () => async dispatch => {
@@ -63,6 +63,32 @@ export const addLoan = (FormData, history) => async dispatch => {
     });
     dispatch(setAlert("Loan Added", "success"));
     history.push("/dashboard");
+  } catch (err) {
+    const errors = err.response.data.errors;
+    if (errors) {
+      errors.forEach(error => dispatch(setAlert(error.msg, "danger")));
+    }
+    dispatch({
+      type: PROFILE_ERROR,
+      payload: { msg: err.response.statusText, status: err.response.status }
+    });
+  }
+};
+
+// Delete Loan
+export const deleteLoan = loanId => async dispatch => {
+  try {
+    const config = {
+      headers: {
+        "Content-Type": "application/json"
+      }
+    };
+    const res = await axios.delete(`/api/profile/loan/${loanId}`, config);
+    dispatch({
+      type: DELETE_PROFILE,
+      payload: res.data
+    });
+    dispatch(setAlert("Loan DELETED", "success"));
   } catch (err) {
     const errors = err.response.data.errors;
     if (errors) {

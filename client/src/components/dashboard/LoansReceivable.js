@@ -1,9 +1,9 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import Moment from "react-moment";
-// import { connect } from "react-redux";
-
-const LoansReceivable = ({ loan }) => {
+import { connect } from "react-redux";
+import { deleteLoan } from "../../actions/profile";
+const LoansReceivable = ({ deleteLoan, loan }) => {
   const loans = loan.map(lo =>
     lo.accountReceivable > 0 ? (
       <tr key={lo._id}>
@@ -16,7 +16,15 @@ const LoansReceivable = ({ loan }) => {
           From: <Moment format="YYYY/MM/DD">{lo.from}</Moment> - To: <Moment format="YYYY/MM/DD">{lo.to}</Moment>
         </td>
         <td>
-          <button className="btn btn-danger">Delete</button>
+          <button
+            onClick={e => {
+              e.preventDefault();
+              deleteLoan(e._id);
+            }}
+            className="btn btn-danger"
+          >
+            Delete
+          </button>
         </td>
       </tr>
     ) : null
@@ -46,4 +54,4 @@ LoansReceivable.propTypes = {
   loan: PropTypes.array.isRequired
 };
 
-export default LoansReceivable;
+export default connect(null, { deleteLoan })(LoansReceivable);

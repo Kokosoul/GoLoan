@@ -6,7 +6,7 @@ import Spinner from "../layout/Spinner";
 import DashboardActions from "./DashboardActions";
 import LoansReceivable from "./LoansReceivable";
 import LoansPayable from "./LoansPayable";
-
+import Summary from "./Summary";
 import { getCurrentProfile } from "../../actions/profile";
 const Dashboard = ({ getCurrentProfile, auth: { user }, profile: { profile, loading } }) => {
   useEffect(() => {
@@ -23,6 +23,7 @@ const Dashboard = ({ getCurrentProfile, auth: { user }, profile: { profile, load
       {profile !== null ? (
         <Fragment>
           <DashboardActions />
+          <Summary loan={profile.loan} />
           <LoansReceivable loan={profile.loan} />
           <LoansPayable loan={profile.loan} />
         </Fragment>

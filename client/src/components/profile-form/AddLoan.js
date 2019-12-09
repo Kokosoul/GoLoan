@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react";
-import { Link, withRouter } from "react";
+import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { addLoan } from "../../actions/profile";
@@ -68,9 +68,9 @@ const AddLoan = ({ addLoan, history }) => {
           <textarea name="description" cols="30" rows="5" placeholder="Loan Description" value={description} onChange={e => onChange(e)}></textarea>
         </div>
         <input type="submit" className="btn btn-primary my-1" />
-        <a className="btn btn-light my-1" to="/dashboard">
+        <Link className="btn btn-light my-1" to="/dashboard">
           Go Back
-        </a>
+        </Link>
       </form>
     </Fragment>
   );
